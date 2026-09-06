@@ -17,6 +17,16 @@
     <meta name="twitter:description" content="AmeriHost provides business email for your company domain with assistance for mailbox setup, DNS configuration, email migrations and integration with your website." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amerihost.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Business Email", "item": "https://amerihost.com/business-email/"}
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -42,12 +52,13 @@
     <main id="main-content" class="service-page email-page" tabindex="-1">
       <section class="service-hero email-hero" aria-labelledby="page-title">
         <div class="service-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Business Email</li></ol></nav>
           <p class="section-kicker">Business Email</p>
           <h1 id="page-title">Professional Email Using Your Business Domain</h1>
           <div class="service-hero__copy">
             <p>Business email should be straightforward, reliable, and connected to the domain your customers already know.</p>
             <p>AmeriHost provides business email services that allow you and your staff to communicate using addresses at your own domain, such as <code class="email-address">name@yourcompany.com</code>.</p>
-            <p>We can help with the email service itself as well as the domain and DNS configuration required to make it work properly.</p>
+            <p>We can help with the email service itself as well as the <a class="context-link" href="/domains-dns/">domain and DNS configuration</a> required to make it work properly.</p>
           </div>
           <a class="button-link" href="/contact/">Talk to AmeriHost About Business Email</a>
         </div>

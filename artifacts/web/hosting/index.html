@@ -17,6 +17,16 @@
     <meta name="twitter:description" content="AmeriHost provides business website hosting for WordPress, traditional and modern static websites, with assistance for SSL, DNS, migrations, backups and cloud delivery." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amerihost.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Website Hosting", "item": "https://amerihost.com/hosting/"}
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -42,6 +52,7 @@
     <main id="main-content" class="service-page hosting-page" tabindex="-1">
       <section class="service-hero hosting-hero" aria-labelledby="page-title">
         <div class="service-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Website Hosting</li></ol></nav>
           <p class="section-kicker">Website Hosting</p>
           <h1 id="page-title">Reliable Hosting for Business Websites</h1>
           <div class="service-hero__copy">
@@ -115,7 +126,7 @@
               <p class="section-kicker">WordPress Hosting</p>
               <h2 id="wordpress-hosting-title">WordPress remains an appropriate platform for websites that depend on its publishing system, plugins, database, or specialized functionality.</h2>
               <p>For WordPress sites, a proper hosting environment includes more than disk space.</p>
-              <p>If an existing WordPress website no longer requires WordPress, we can also evaluate whether rebuilding it as a static website would provide a simpler long-term solution.</p>
+              <p>If an existing WordPress website no longer requires WordPress, we can also evaluate whether <a class="context-link" href="/website-design/">rebuilding it as a static website</a> would provide a simpler long-term solution.</p>
             </div>
             <div>
               <p>AmeriHost can assist with areas such as:</p>
@@ -127,7 +138,7 @@
                 <li>PHP configuration</li>
                 <li>Database access</li>
                 <li>Website migration</li>
-                <li>DNS changes</li>
+                <li><a class="context-link" href="/domains-dns/">DNS changes</a></li>
                 <li>Troubleshooting</li>
                 <li>Security and maintenance planning</li>
               </ul>

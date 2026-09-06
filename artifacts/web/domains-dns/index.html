@@ -17,6 +17,16 @@
     <meta name="twitter:description" content="AmeriHost provides domain and DNS management for websites, email, Cloudflare, SSL, redirects, migrations, subdomains and other online business services." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amerihost.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Domains & DNS", "item": "https://amerihost.com/domains-dns/"}
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -42,12 +52,13 @@
     <main id="main-content" class="service-page domains-page" tabindex="-1">
       <section class="service-hero domains-hero" aria-labelledby="page-title">
         <div class="service-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Domains &amp; DNS</li></ol></nav>
           <p class="section-kicker">Domains &amp; DNS</p>
           <h1 id="page-title">Domain and DNS Management for Your Online Services</h1>
           <div class="service-hero__copy">
             <p>Your domain name connects customers to your website, email, and other online services.</p>
             <p>Behind that domain is DNS—the system that determines where each of those services is located.</p>
-            <p>AmeriHost can help with domain registration, DNS configuration, service migrations, website launches, email-related records, redirects, and ongoing domain management.</p>
+            <p>AmeriHost can help with domain registration, DNS configuration, service migrations, website launches, <a class="context-link" href="/business-email/">email-related records</a>, redirects, and ongoing domain management.</p>
           </div>
           <a class="button-link" href="/contact/">Talk to AmeriHost About Domains &amp; DNS</a>
         </div>
@@ -122,7 +133,7 @@
 
       <section class="content-section content-section--process" aria-labelledby="rebuild-title">
         <div class="content-shell">
-          <div class="section-heading"><p class="section-kicker">DNS During a Website Rebuild</p><h2 id="rebuild-title">A website rebuild often takes place while the existing site remains online.</h2><p>The new website can be developed and reviewed separately without changing the production domain.</p><p>Once the new site is approved, AmeriHost can coordinate the DNS and hosting changes needed to make the new website live.</p><p>A typical transition may involve:</p></div>
+          <div class="section-heading"><p class="section-kicker">DNS During a Website Rebuild</p><h2 id="rebuild-title">A website rebuild often takes place while the existing site remains online.</h2><p>The <a class="context-link" href="/website-design/">new website</a> can be developed and reviewed separately without changing the production domain.</p><p>Once the new site is approved, AmeriHost can coordinate the DNS and <a class="context-link" href="/hosting/">hosting changes</a> needed to make the new website live.</p><p>A typical transition may involve:</p></div>
           <ol class="process-list domain-process">
             <li><span class="process-list__number">01</span><h3>Reviewing the existing DNS configuration</h3></li>
             <li><span class="process-list__number">02</span><h3>Identifying website and email dependencies</h3></li>

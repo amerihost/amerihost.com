@@ -17,6 +17,16 @@
     <meta name="twitter:description" content="Contact AmeriHost for website design, hosting, business email, domain and DNS services, endpoint security, migrations, or assistance with an existing service." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/src/styles/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://amerihost.com/"},
+          {"@type": "ListItem", "position": 2, "name": "Contact AmeriHost", "item": "https://amerihost.com/contact/"}
+        ]
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -42,11 +52,12 @@
     <main id="main-content" class="service-page contact-page" tabindex="-1">
       <section class="service-hero contact-hero" aria-labelledby="page-title">
         <div class="service-hero__inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Contact AmeriHost</li></ol></nav>
           <p class="section-kicker">Contact AmeriHost</p>
           <h1 id="page-title">How Can We Help?</h1>
           <div class="service-hero__copy">
             <p>Whether you are planning a new website, modernizing an existing one, moving hosting or email, working through a domain or DNS issue, or need assistance with an existing AmeriHost service, contact us to discuss what you need.</p>
-            <p>You do not need to know the technical solution before getting in touch. Tell us what you are trying to accomplish or what is not working, and we can begin from there.</p>
+            <p>Start with the problem you are seeing; we can help determine whether the website, hosting, DNS or email layer is involved. Tell us what you are trying to accomplish or what is not working, and we can begin from there.</p>
           </div>
         </div>
       </section>
