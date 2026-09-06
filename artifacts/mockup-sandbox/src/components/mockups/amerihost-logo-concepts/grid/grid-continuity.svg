@@ -8,6 +8,5 @@
     <rect fill="#D61A02" height="52" rx="10" width="52" x="76" y="76"/>
     <path d="M52 52h24v24H52z" fill="#fff"/>
   </g>
-  <text x="176" y="113" fill="#D61A02" font-family="Manrope, Avenir Next, Segoe UI, sans-serif" font-size="71" font-weight="700" letter-spacing="-3">Ameri</text>
-  <text x="397" y="113" fill="#074FCD" font-family="Manrope, Avenir Next, Segoe UI, sans-serif" font-size="71" font-weight="700" letter-spacing="-3">Host</text>
+  <text x="176" y="113" font-family="Manrope, Avenir Next, Segoe UI, sans-serif" font-size="71" font-weight="700" letter-spacing="-3"><tspan fill="#D61A02">Ameri</tspan><tspan fill="#074FCD">Host</tspan></text>
 </svg>

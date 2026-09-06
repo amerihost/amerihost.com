@@ -1,7 +1,5 @@
 import "./grid-continuity.css";
 
-import markUrl from "./grid-continuity.svg";
-
 const colors = {
   ink: "#13233B",
   red: "#D61A02",
@@ -26,6 +24,21 @@ function Mark({ size = 64 }: { size?: number }) {
       <rect fill={colors.red} height="35" rx="7" width="35" x="51" y="51" />
       <path d="M37 37h14v14H37z" fill="#fff" />
     </svg>
+  );
+}
+
+function GridLogo({ compact = false }: { compact?: boolean }) {
+  return (
+    <div
+      aria-label="AmeriHost Grid Continuity logo"
+      className={`grid-wordmark-lockup${compact ? " grid-wordmark-lockup--compact" : ""}`}
+      role="img"
+    >
+      <Mark size={compact ? 30 : 58} />
+      <span className="grid-wordmark">
+        <span className="grid-wordmark-ameri">Ameri</span><span className="grid-wordmark-host">Host</span>
+      </span>
+    </div>
   );
 }
 
@@ -69,7 +82,7 @@ export function GridContinuity() {
           <p>Simple geometry keeps the mark distinct, even when the logo is only a few pixels tall.</p>
         </div>
         <div className="grid-logo-stage">
-          <img alt="AmeriHost Grid Continuity full logo" src={markUrl} />
+          <GridLogo />
           <div className="grid-stage-label">Full horizontal logo / light background</div>
         </div>
       </section>
@@ -87,7 +100,7 @@ export function GridContinuity() {
             <span className="grid-browser-secure">secure connection</span>
           </div>
           <div className="grid-site-header">
-            <img alt="AmeriHost" src={markUrl} />
+            <GridLogo compact />
             <nav><span>Websites</span><span>Hosting</span><span>Support</span><strong>Get started</strong></nav>
           </div>
           <div className="grid-site-content">
