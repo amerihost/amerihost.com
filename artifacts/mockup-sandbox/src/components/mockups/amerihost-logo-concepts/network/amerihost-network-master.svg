@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 132" role="img" aria-labelledby="title desc">
+  <title id="title">AmeriHost Network Signal logo</title>
+  <desc id="desc">A compact abstract network signal made from four connected blue and red tiles beside the AmeriHost wordmark.</desc>
+  <g transform="translate(4 18)">
+    <path d="M0 0h44v44H0z" fill="#074FCD"/>
+    <path d="M52 0h44v44H52z" fill="#196BDE"/>
+    <path d="M0 52h44v44H0z" fill="#D61A02"/>
+    <path d="M52 52h44v44H52z" fill="#D61A02"/>
+    <path d="M44 22h8M74 44v8M44 74h8M22 44v8" stroke="#123455" stroke-width="10" stroke-linecap="square"/>
+  </g>
+  <text x="124" y="86" font-family="DM Sans, Avenir Next, Avenir, Arial, sans-serif" font-size="67" font-weight="700" letter-spacing="-.8" fill="#123455">Ameri<tspan fill="#074FCD">Host</tspan></text>
+</svg>

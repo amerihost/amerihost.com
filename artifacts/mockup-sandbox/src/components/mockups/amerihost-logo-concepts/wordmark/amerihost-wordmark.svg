@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="160" viewBox="0 0 720 160" role="img" aria-labelledby="title desc">
+  <title id="title">AmeriHost typographic wordmark</title>
+  <desc id="desc">A confident red and blue AmeriHost wordmark with a custom orange bridge extending from the A into the H.</desc>
+  <rect width="720" height="160" fill="transparent"/>
+  <g font-family="Avenir Next, Trebuchet MS, Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-2">
+    <text x="20" y="105" fill="#D61A02">Ameri</text>
+    <text x="282" y="105" fill="#074FCD">Host</text>
+  </g>
+  <!-- A grounded crossbar becomes a quiet bridge into H: a distinction in the lettering, not a detached icon. -->
+  <path d="M33 79H73M73 79H151" fill="none" stroke="#D61A02" stroke-width="7" stroke-linecap="square"/>
+  <path d="M151 79H294" fill="none" stroke="#196BDE" stroke-width="7" stroke-linecap="square"/>
+  <path d="M292 69V89" fill="none" stroke="#196BDE" stroke-width="7" stroke-linecap="square"/>
+  <circle cx="294" cy="79" r="4" fill="#D61A02"/>
+</svg>

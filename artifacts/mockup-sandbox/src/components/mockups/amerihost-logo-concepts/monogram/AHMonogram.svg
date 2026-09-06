@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 190" role="img" aria-labelledby="title desc">
+  <title id="title">AmeriHost AH monogram</title>
+  <desc id="desc">A geometric interlocking A and H symbol in red orange and blue, followed by the AmeriHost wordmark.</desc>
+  <g aria-label="AH monogram">
+    <path fill="#D61A02" d="M24 154 78 28h29l24 56H99l-7-17-28 87H24Zm39-31h72l12 31H51l12-31Z"/>
+    <path fill="#074FCD" d="M128 28h31v126h-31V28Zm68 0h31v126h-31V28Zm-66 49h70v31h-70V77Z"/>
+    <path fill="#196BDE" d="M166 28h30v49h-30V28Z"/>
+  </g>
+  <text x="260" y="124" fill="#18304D" font-family="Avenir Next, Trebuchet MS, sans-serif" font-size="78" font-weight="700" letter-spacing="-2">Ameri<tspan fill="#074FCD">Host</tspan></text>
+</svg>

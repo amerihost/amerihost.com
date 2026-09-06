@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+.grid-page {
+  --grid-ink: #13233b;
+  --grid-muted: #647087;
+  --grid-paper: #f7f8f6;
+  --grid-panel: #eef1f2;
+  --grid-red: #d61a02;
+  --grid-blue: #074fcd;
+  min-height: 100vh;
+  color: var(--grid-ink);
+  background: var(--grid-paper);
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+  padding: 0 clamp(20px, 5vw, 76px);
+}
+.grid-topbar, .grid-footer { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #d9dfe2; padding: 22px 0; color: var(--grid-muted); font: 500 10px/1 "DM Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+.grid-footer { border-top: 1px solid #d9dfe2; border-bottom: 0; margin-top: 50px; padding-bottom: 34px; }
+.grid-kicker { display: flex; align-items: center; gap: 9px; color: var(--grid-ink); }
+.grid-kicker-dot { background: var(--grid-red); width: 7px; height: 7px; border-radius: 50%; }
+.grid-hypothesis { color: var(--grid-blue); }
+.grid-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(270px, .85fr); gap: 7vw; max-width: 1170px; margin: 0 auto; padding: clamp(68px, 10vw, 130px) 0 104px; align-items: center; }
+.grid-eyebrow { margin: 0 0 18px; color: var(--grid-blue); font: 500 10px/1.2 "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+.grid-hero h1 { max-width: 660px; margin: 0; font-size: clamp(42px, 7.1vw, 88px); line-height: .98; letter-spacing: -.065em; font-weight: 700; }
+.grid-hero h1 em { color: var(--grid-red); font-style: normal; }
+.grid-intro { color: var(--grid-muted); max-width: 500px; margin: 32px 0 0; font-size: 15px; line-height: 1.75; }
+.grid-palette { display: flex; gap: 25px; margin-top: 30px; font: 500 10px "DM Mono", monospace; color: var(--grid-muted); }
+.grid-palette span { display: flex; align-items: center; gap: 8px; }
+.swatch { width: 12px; height: 12px; display: inline-block; border-radius: 3px; }.swatch-red { background: var(--grid-red); }.swatch-blue { background: var(--grid-blue); }
+.grid-hero-mark { position: relative; display: grid; place-items: center; min-height: 310px; background: #e9edef; border-radius: 4px; }
+.grid-hero-mark:before { content: ""; position: absolute; inset: 20px; border: 1px solid #d5dcdf; }
+.grid-mark-caption { position: absolute; top: 29px; left: 30px; color: var(--grid-muted); font: 500 10px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.grid-axis { position: absolute; background: #cdd6d9; }.axis-top { top: 20px; bottom: 20px; left: 50%; width: 1px; }.axis-left { left: 20px; right: 20px; top: 50%; height: 1px; }
+.grid-panel { max-width: 1170px; margin: 0 auto 26px; background: var(--grid-panel); padding: clamp(28px, 5vw, 64px); border-radius: 4px; }
+.grid-section-heading { max-width: 480px; }.grid-section-heading h2, .grid-evaluation h2 { font-size: clamp(25px, 3vw, 38px); letter-spacing: -.045em; line-height: 1.05; margin: 0; }.grid-section-heading p:not(.grid-eyebrow) { margin: 15px 0 0; color: var(--grid-muted); font-size: 13px; line-height: 1.65; }
+.grid-logo-stage { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 225px; margin-top: 46px; background: #fff; border: 1px solid #e0e5e6; border-radius: 3px; }
+.grid-logo-stage img { width: min(74%, 620px); height: auto; }.grid-stage-label, .grid-size-note { margin-top: 23px; color: #84909a; font: 10px "DM Mono", monospace; text-transform: uppercase; letter-spacing: .07em; }
+.grid-preview-section { max-width: 1170px; display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(30px, 7vw, 100px); align-items: center; margin: 94px auto 0; }
+.grid-browser { overflow: hidden; background: white; border: 1px solid #d5dcdf; border-radius: 4px; box-shadow: 0 18px 40px rgba(19,35,59,.08); }
+.grid-browser-bar { display: flex; align-items: center; gap: 16px; height: 35px; padding: 0 13px; background: #eef1f2; border-bottom: 1px solid #dce2e4; }.grid-browser-dots { display: flex; gap: 4px; }.grid-browser-dots i { width: 6px; height: 6px; border-radius: 50%; background: #b5bec2; }.grid-address { flex: 1; color: #8a969c; font: 9px "DM Mono", monospace; }.grid-browser-secure { color: #84909a; font: 8px "DM Mono", monospace; }
+.grid-site-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 26px; border-bottom: 1px solid #edf0f0; }.grid-site-header img { width: 178px; }.grid-site-header nav { display: flex; align-items: center; gap: 19px; color: #687584; font-size: 9px; }.grid-site-header strong { background: var(--grid-blue); color: white; padding: 9px 12px; border-radius: 2px; font-size: 8px; }.grid-site-content { min-height: 160px; padding: 42px 26px; color: var(--grid-ink); font-size: 19px; letter-spacing: -.03em; }.grid-site-rule { width: 35px; margin-top: 17px; border-top: 3px solid var(--grid-red); }.grid-size-note { padding: 0 26px 20px; margin-top: 0; font-size: 8px; }
+.grid-notes { display: grid; grid-template-columns: .75fr 1.25fr; gap: clamp(32px, 8vw, 120px); margin-top: 26px; }.grid-symbol-inset { display: grid; place-items: center; height: 220px; margin: 29px 0 20px; background: #fff; border: 1px solid #dfe4e6; }.grid-caption, .grid-evaluation > p { margin: 0; color: var(--grid-muted); font-size: 13px; line-height: 1.7; }.grid-evaluation { padding-top: 3px; }.grid-evaluation h2 { margin-bottom: 20px; }.grid-verdict { display: flex; gap: 13px; align-items: flex-start; margin-top: 27px; padding-top: 20px; border-top: 1px solid #d4dbde; color: var(--grid-muted); font-size: 12px; line-height: 1.5; }.grid-verdict-mark { display: grid; place-items: center; color: white; background: var(--grid-blue); width: 21px; height: 21px; border-radius: 50%; font-size: 12px; }.grid-verdict strong { color: var(--grid-ink); font-weight: 700; }
+@media (max-width: 760px) { .grid-topbar, .grid-footer { font-size: 8px; }.grid-hypothesis { display: none; }.grid-hero, .grid-preview-section, .grid-notes { grid-template-columns: 1fr; }.grid-hero { padding: 70px 0 65px; gap: 47px; }.grid-hero-mark { min-height: 250px; }.grid-site-header nav { display: none; }.grid-site-header img { width: 150px; }.grid-preview-section { margin-top: 68px; }.grid-notes { gap: 45px; }.grid-logo-stage img { width: 88%; }.grid-footer { margin-top: 36px; } }
