@@ -62,6 +62,8 @@ if (form) {
       if (!window.turnstile) return;
       widgetId = window.turnstile.render(widgetContainer, {
         sitekey: siteKey,
+        appearance: "always",
+        theme: "auto",
         callback: (token: string) => { if (tokenInput) tokenInput.value = token; },
         "expired-callback": () => { if (tokenInput) tokenInput.value = ""; },
         "error-callback": () => setStatus("Bot verification could not load. Please try again.", "error"),
