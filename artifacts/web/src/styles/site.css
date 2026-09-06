@@ -1830,19 +1830,109 @@ a {
   }
 }
 
-.contact-page .client-support-section .split-layout__lead h2 {
+h2.supporting-heading,
+:is(
+  #hosting-deployment-title,
+  .email-page #access-title,
+  .email-page #dns-title,
+  .email-page #coordination-title,
+  .domains-page #more-title,
+  .domains-page #dns-does-title,
+  .domains-page #registration-title,
+  .domains-page #cloudflare-title,
+  .domains-page #coordination-title,
+  .domains-page #rebuild-title,
+  .domains-page #domain-migration-title,
+  .domains-page #ongoing-title,
+  .domains-page .domain-editorial-grid h2,
+  .security-page #endpoint-title,
+  .security-page #pcmatic-title,
+  .security-page #allowlisting-title,
+  .security-page #broader-title,
+  .security-page #unknown-title,
+  .security-page #different-title,
+  .security-page .security-feature-grid h2,
+  .security-page .editorial-grid h2,
+  .about-page #modernization-title,
+  .about-page #choices-title,
+  .about-page #connections-title,
+  .about-page #whole-title,
+  .about-page #more-title,
+  .about-page .about-platform-grid h2,
+  .about-page .about-technical-grid h2
+) {
   font-size: 1.75rem;
   line-height: 1.3;
 }
 
 @media (max-width: 64rem) {
-  .contact-page .client-support-section .split-layout__lead h2 {
+  h2.supporting-heading,
+  :is(
+    #hosting-deployment-title,
+    .email-page #access-title,
+    .email-page #dns-title,
+    .email-page #coordination-title,
+    .domains-page #more-title,
+    .domains-page #dns-does-title,
+    .domains-page #registration-title,
+    .domains-page #cloudflare-title,
+    .domains-page #coordination-title,
+    .domains-page #rebuild-title,
+    .domains-page #domain-migration-title,
+    .domains-page #ongoing-title,
+    .domains-page .domain-editorial-grid h2,
+    .security-page #endpoint-title,
+    .security-page #pcmatic-title,
+    .security-page #allowlisting-title,
+    .security-page #broader-title,
+    .security-page #unknown-title,
+    .security-page #different-title,
+    .security-page .security-feature-grid h2,
+    .security-page .editorial-grid h2,
+    .about-page #modernization-title,
+    .about-page #choices-title,
+    .about-page #connections-title,
+    .about-page #whole-title,
+    .about-page #more-title,
+    .about-page .about-platform-grid h2,
+    .about-page .about-technical-grid h2
+  ) {
     font-size: 1.5rem;
   }
 }
 
 @media (max-width: 44rem) {
-  .contact-page .client-support-section .split-layout__lead h2 {
+  h2.supporting-heading,
+  :is(
+    #hosting-deployment-title,
+    .email-page #access-title,
+    .email-page #dns-title,
+    .email-page #coordination-title,
+    .domains-page #more-title,
+    .domains-page #dns-does-title,
+    .domains-page #registration-title,
+    .domains-page #cloudflare-title,
+    .domains-page #coordination-title,
+    .domains-page #rebuild-title,
+    .domains-page #domain-migration-title,
+    .domains-page #ongoing-title,
+    .domains-page .domain-editorial-grid h2,
+    .security-page #endpoint-title,
+    .security-page #pcmatic-title,
+    .security-page #allowlisting-title,
+    .security-page #broader-title,
+    .security-page #unknown-title,
+    .security-page #different-title,
+    .security-page .security-feature-grid h2,
+    .security-page .editorial-grid h2,
+    .about-page #modernization-title,
+    .about-page #choices-title,
+    .about-page #connections-title,
+    .about-page #whole-title,
+    .about-page #more-title,
+    .about-page .about-platform-grid h2,
+    .about-page .about-technical-grid h2
+  ) {
     font-size: 1.3rem;
   }
 }
