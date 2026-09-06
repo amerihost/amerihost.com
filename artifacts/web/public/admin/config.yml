@@ -1,0 +1,27 @@
+backend:
+  name: github
+  repo: amerihost/amerihost.com
+  branch: main
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: pages
+    label: Pages
+    folder: content/pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        required: false
+      - label: Meta description
+        name: metaDescription
+        widget: text
+        required: false
+      - label: Body
+        name: body
+        widget: markdown
+        required: false
