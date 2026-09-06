@@ -70,11 +70,16 @@ a {
 }
 
 .wordmark {
-  color: var(--ink);
-  font-size: 1.15rem;
-  font-weight: 750;
-  letter-spacing: -0.04em;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
   text-decoration: none;
+}
+
+.wordmark img {
+  display: block;
+  width: clamp(9.75rem, 14vw, 11.5rem);
+  height: auto;
 }
 
 .site-nav {
