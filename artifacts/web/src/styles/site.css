@@ -312,6 +312,10 @@ a {
   letter-spacing: -0.045em;
 }
 
+.content-section--dark .section-heading h2 {
+  color: #ffffff;
+}
+
 .section-intro {
   max-width: 46rem;
 }
