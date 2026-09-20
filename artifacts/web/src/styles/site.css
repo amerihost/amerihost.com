@@ -1466,6 +1466,63 @@ a {
   color: var(--accent);
 }
 
+.site-footer__links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+}
+
+.site-footer__links-label {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.site-footer__links a {
+  color: var(--accent-dark);
+}
+
+.site-footer__links a:hover {
+  color: var(--accent);
+}
+
+.policy-page .service-hero__inner {
+  max-width: 62rem;
+}
+
+.policy-page .content-shell {
+  max-width: 54rem;
+}
+
+.policy-page .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.policy-page .content-section h2 {
+  font-size: clamp(1.65rem, 2.4vw, 2.2rem);
+  line-height: 1.15;
+}
+
+.policy-page .content-section p + h2,
+.policy-page .content-section ul + h2 {
+  margin-top: 2.5rem;
+}
+
+.policy-page .content-section ul {
+  margin-top: 0.9rem;
+}
+
+.policy-page .policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.policy-page .policy-links a {
+  font-weight: 700;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1516,6 +1573,12 @@ a {
 
   .site-footer {
     width: min(100% - 2rem, var(--max-width));
+  }
+
+  .site-footer__links {
+    order: 3;
+    width: 100%;
+    padding-bottom: 0.9rem;
   }
 
   .content-shell,
@@ -1582,6 +1645,17 @@ a {
 
   .service-hero {
     min-height: auto;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding-block: 1.25rem;
+  }
+
+  .site-footer__links {
+    order: initial;
   }
 
   .equal-cards,
