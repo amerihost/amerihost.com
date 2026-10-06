@@ -571,6 +571,19 @@ a {
   order: 2;
 }
 
+@media (min-width: 44.001rem) {
+  .hosting-page .wordpress-assistance-list {
+    display: block;
+    column-count: 2;
+    column-gap: 0.7rem;
+  }
+
+  .hosting-page .wordpress-assistance-list li {
+    break-inside: avoid;
+    margin-bottom: 0.7rem;
+  }
+}
+
 .content-section--migration {
   overflow: hidden;
   background:
@@ -863,6 +876,10 @@ a {
 .domain-editorial-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(1rem, 3vw, 2rem);
+}
+
+.domains-page .content-shell.domain-editorial-grid {
+  margin-inline: auto;
 }
 
 .domain-editorial-grid h2 {
