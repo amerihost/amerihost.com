@@ -929,6 +929,10 @@ a {
   gap: clamp(1rem, 3vw, 2rem);
 }
 
+.security-page .content-shell.security-feature-grid {
+  margin-inline: auto;
+}
+
 .security-feature-grid h2 {
   font-size: clamp(2rem, 3.5vw, 3rem);
 }
