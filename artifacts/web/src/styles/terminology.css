@@ -1,0 +1,239 @@
+.terminology-page .glossary-tools {
+  display: grid;
+  max-width: 46rem;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.terminology-page .glossary-tools label {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.terminology-page .glossary-tools p {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.terminology-page .glossary-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+.terminology-page #glossary-search {
+  flex: 1 1 16rem;
+  min-width: 0;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #b9c5d5;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.terminology-page .glossary-button {
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-radius: 0.35rem;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.terminology-page .glossary-button:hover {
+  border-color: var(--accent-dark);
+  background: var(--accent-dark);
+}
+
+.terminology-page .glossary-button[data-glossary-clear] {
+  background: var(--surface-strong);
+  color: var(--accent-dark);
+}
+
+.terminology-page .glossary-button[data-glossary-clear]:hover {
+  background: #e8f2f8;
+}
+
+.terminology-page #glossary-search:focus-visible,
+.terminology-page .glossary-button:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.terminology-page #glossary-results {
+  padding-block: clamp(2rem, 4vw, 3rem);
+}
+
+.terminology-page .glossary-category + .glossary-category {
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
+.terminology-page .glossary-category h2 {
+  margin: 0 0 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink);
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.terminology-page .glossary-list {
+  display: grid;
+  margin: 0;
+  gap: 0.6rem;
+}
+
+.terminology-page .glossary-entry {
+  min-width: 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: var(--surface);
+}
+
+.terminology-page .glossary-entry dt {
+  margin: 0 0 0.35rem;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.terminology-page .glossary-entry dd {
+  margin: 0;
+  color: var(--muted-ink);
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.terminology-page #glossary-empty {
+  margin: 1rem 0 0;
+  color: var(--muted-ink);
+  line-height: 1.7;
+}
+
+@media print {
+  html {
+    background: #fff;
+  }
+
+  @page {
+    margin: 0.75in;
+  }
+
+  body.terminology-document,
+  body.terminology-document .service-page,
+  body.terminology-document .content-section,
+  body.terminology-document .content-section--light {
+    min-height: 0;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  body.terminology-document .skip-link,
+  body.terminology-document .site-header,
+  body.terminology-document .site-footer,
+  body.terminology-document .breadcrumb,
+  body.terminology-document .section-kicker,
+  body.terminology-document .glossary-tools,
+  body.terminology-document #glossary-empty,
+  body.terminology-document button,
+  body.terminology-document .dev-banner,
+  body.terminology-document [data-dev-banner] {
+    display: none !important;
+  }
+
+  .terminology-page .service-hero {
+    display: block;
+    min-height: 0;
+    overflow: visible;
+    background: none;
+    border: 0;
+  }
+
+  .terminology-page .service-hero__inner,
+  .terminology-page .content-shell {
+    width: 100%;
+    padding: 0;
+  }
+
+  .terminology-page .service-hero h1 {
+    margin: 0 0 0.5rem;
+    color: #000;
+    font-size: 20pt;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .terminology-page .service-hero__copy {
+    max-width: none;
+    margin: 0 0 1rem;
+  }
+
+  .terminology-page .service-hero__copy p {
+    color: #000;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+
+  .terminology-page .content-section {
+    padding: 0;
+  }
+
+  .terminology-page #glossary-results {
+    padding: 0;
+  }
+
+  .terminology-page .glossary-category + .glossary-category {
+    margin-top: 1.25rem;
+  }
+
+  .terminology-page .glossary-category h2 {
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border-bottom: 1px solid #000;
+    color: #000;
+    font-size: 14pt;
+    letter-spacing: 0;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .terminology-page .glossary-list {
+    display: block;
+  }
+
+  .terminology-page .glossary-entry {
+    padding: 0;
+    margin: 0 0 0.5rem;
+    border: 0;
+    background: none;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .terminology-page .glossary-entry dt {
+    margin: 0;
+    color: #000;
+    font-size: 10.5pt;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .terminology-page .glossary-entry dd {
+    color: #000;
+    font-size: 10.5pt;
+    line-height: 1.4;
+  }
+}

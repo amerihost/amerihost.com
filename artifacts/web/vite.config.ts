@@ -82,6 +82,7 @@ export default defineConfig({
         security: path.resolve(import.meta.dirname, 'security/index.html'),
         about: path.resolve(import.meta.dirname, 'about/index.html'),
         contact: path.resolve(import.meta.dirname, 'contact/index.html'),
+        terminology: path.resolve(import.meta.dirname, 'terminology/index.html'),
         websiteForms: path.resolve(
           import.meta.dirname,
           'website-forms/index.html',
