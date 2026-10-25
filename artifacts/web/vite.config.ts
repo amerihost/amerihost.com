@@ -79,6 +79,10 @@ export default defineConfig({
           import.meta.dirname,
           'domains-dns/index.html',
         ),
+        domainServices: path.resolve(
+          import.meta.dirname,
+          'domain-services/index.html',
+        ),
         security: path.resolve(import.meta.dirname, 'security/index.html'),
         about: path.resolve(import.meta.dirname, 'about/index.html'),
         contact: path.resolve(import.meta.dirname, 'contact/index.html'),

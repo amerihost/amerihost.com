@@ -1,0 +1,59 @@
+.domain-services-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.domain-services-brand {
+  padding: clamp(3rem, 8vw, 5rem) 1.5rem 0;
+}
+
+.domain-services-brand img {
+  display: block;
+  width: min(22rem, 100%);
+  height: auto;
+  /* Crop the existing asset's empty right margin without changing the logo. */
+  aspect-ratio: 528 / 180;
+  object-fit: cover;
+  object-position: left;
+  margin-inline: auto;
+}
+
+.domain-services-content {
+  flex: 1;
+  width: min(100% - 3rem, 60rem);
+  margin-inline: auto;
+  padding-block: clamp(3rem, 8vw, 6rem);
+  text-align: center;
+}
+
+.domain-services-content h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.domain-services-home-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 1.5rem;
+  padding-inline: 0.75rem;
+}
+
+.domain-services-footer {
+  width: min(100% - 3rem, 76rem);
+  margin-inline: auto;
+  padding-block: 1.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted-ink);
+  text-align: center;
+}
+
+.domain-services-footer p {
+  margin: 0;
+}
