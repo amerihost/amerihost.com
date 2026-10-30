@@ -87,6 +87,7 @@ export default defineConfig({
         about: path.resolve(import.meta.dirname, 'about/index.html'),
         contact: path.resolve(import.meta.dirname, 'contact/index.html'),
         terminology: path.resolve(import.meta.dirname, 'terminology/index.html'),
+        portfolio: path.resolve(import.meta.dirname, 'portfolio/index.html'),
         websiteForms: path.resolve(
           import.meta.dirname,
           'website-forms/index.html',
@@ -107,6 +108,16 @@ export default defineConfig({
     strictPort: true,
     host: '0.0.0.0',
     allowedHosts: true,
+    // Development only: the public API allows amerihost.com, not preview hosts.
+    // Production browsers fetch directly from the shared public API.
+    proxy: {
+      '/__portfolio-preview/api/public/portfolio': {
+        target: 'https://portfolio.smbportals.com',
+        changeOrigin: true,
+        rewrite: () => '/api/public/portfolio',
+        headers: { Origin: 'https://amerihost.com' },
+      },
+    },
     fs: {
       strict: true,
     },

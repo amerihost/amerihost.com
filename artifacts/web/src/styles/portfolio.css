@@ -1,0 +1,48 @@
+/* Portfolio page — scoped styles only */
+.portfolio-hero { min-height: min(26rem, calc(60vh - var(--header-height))); }
+
+.portfolio-controls { margin: 0 0 1rem; padding: clamp(1rem, 2.5vw, 1.5rem); border: 1px solid var(--line); border-radius: 0.65rem; background: var(--surface); min-width: 0; }
+.portfolio-controls:disabled { opacity: 0.7; }
+.portfolio-controls__legend { padding: 0 0.4rem; color: var(--ink); font-size: 0.9rem; font-weight: 700; }
+.portfolio-controls__row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto; align-items: end; gap: 1rem; }
+.portfolio-controls__row:not(:has(#portfolio-industry-field:not([hidden]))) { grid-template-columns: minmax(0, 1fr) auto; }
+.portfolio-field { min-width: 0; }
+.portfolio-field[hidden] { display: none; }
+.portfolio-field__label { display: block; margin-bottom: 0.45rem; color: var(--ink); font-size: 0.9rem; font-weight: 700; }
+.portfolio-field__input { width: 100%; min-height: 2.9rem; padding: 0.7rem 0.85rem; border: 1px solid #b9c5d5; border-radius: 0.35rem; background: #fff; color: var(--ink); font: inherit; }
+.portfolio-reset { min-height: 2.9rem; padding: 0.65rem 1.1rem; border: 1px solid var(--accent); border-radius: 0.35rem; background: var(--surface-strong); color: var(--accent-dark); font: inherit; font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: background 160ms ease; }
+.portfolio-reset:hover:not(:disabled) { background: #e8f2f8; }
+.portfolio-controls:disabled .portfolio-reset, .portfolio-controls:disabled .portfolio-field__input { cursor: not-allowed; }
+
+.portfolio-count { min-height: 1.5rem; margin: 0 0 1rem; color: var(--muted-ink); font-size: 0.9rem; }
+.portfolio-state, .portfolio-empty { margin: 0 0 1rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); background: var(--surface); }
+.portfolio-state:empty, .portfolio-state[hidden], .portfolio-empty[hidden] { display: none; }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; }
+.portfolio-grid[aria-busy="true"] { min-height: 24rem; }
+.portfolio-grid:empty:not([aria-busy="true"]) { display: none; }
+
+.portfolio-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 0.65rem; background: var(--surface-strong); }
+.portfolio-card[hidden] { display: none; }
+.portfolio-card__image { display: block; width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: contain; background: #eef3f9; border-bottom: 1px solid var(--line); }
+.portfolio-card__body { display: flex; flex: 1 1 auto; flex-direction: column; padding: clamp(1.1rem, 2.2vw, 1.5rem); }
+.portfolio-card__title { margin: 0 0 0.5rem; color: var(--ink); font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.2; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.content-section .portfolio-card__description { margin: 0 0 1rem; line-height: 1.6; }
+.portfolio-card__details { display: grid; grid-template-columns: auto minmax(0, 1fr); margin: 0 0 1rem; gap: 0.35rem 0.75rem; font-size: 0.85rem; }
+.portfolio-card__details > div { display: contents; }
+.portfolio-card__details dt { color: var(--ink); font-weight: 700; }
+.portfolio-card__details dd { margin: 0; color: var(--muted-ink); overflow-wrap: anywhere; }
+.portfolio-card__link { display: inline-flex; align-items: center; align-self: flex-start; min-height: 2.75rem; margin-top: auto; padding: 0.55rem 1rem; border: 1px solid var(--accent); border-radius: 0.35rem; background: var(--accent); color: #fff; font-size: 0.875rem; font-weight: 700; text-decoration: none; transition: background 160ms ease, border-color 160ms ease; }
+.portfolio-card__link:hover { border-color: var(--accent-dark); background: var(--accent-dark); }
+
+@media (max-width: 64rem) {
+  .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 44rem) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .portfolio-controls__row, .portfolio-controls__row:not(:has(#portfolio-industry-field:not([hidden]))) { grid-template-columns: 1fr; }
+  .portfolio-reset { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-reset, .portfolio-card__link { transition: none; }
+}
