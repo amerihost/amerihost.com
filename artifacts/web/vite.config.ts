@@ -1,7 +1,8 @@
 import path from 'path';
+import { readFileSync } from 'node:fs';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
-import { defineConfig } from 'vite';
+import { defineConfig, type Connect, type Plugin } from 'vite';
 
 import runtimeErrorOverlay from '@replit/vite-plugin-runtime-error-modal';
 
@@ -27,9 +28,42 @@ if (!basePath) {
   );
 }
 
+// Cloudflare reads _redirects in production. Mirror only the retired legal
+// routes in Vite so preview uses the same permanent redirects, not SPA fallback.
+function legacyLegalRedirects(): Plugin {
+  const redirects = new Map(
+    readFileSync(path.resolve(import.meta.dirname, 'public/_redirects'), 'utf8')
+      .split('\n')
+      .map((line) => line.trim().split(/\s+/))
+      .filter(([from, , status]) => from.startsWith('/website-forms/') && status === '301')
+      .map(([from, to]) => [from, to]),
+  );
+  const middleware: Connect.NextHandleFunction = (request, response, next) => {
+      const url = new URL(request.url ?? '/', 'http://localhost');
+      const prefix = (basePath ?? '/').replace(/\/$/, '');
+      const pathname = prefix && url.pathname.startsWith(`${prefix}/`)
+        ? url.pathname.slice(prefix.length)
+        : url.pathname;
+      const destination = redirects.get(pathname);
+      if (!destination) return next();
+      response.writeHead(301, { Location: `${prefix}${destination}${url.search}` });
+      response.end();
+  };
+  return {
+    name: 'legacy-legal-redirects',
+    configureServer(server) {
+      server.middlewares.use(middleware);
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use(middleware);
+    },
+  };
+}
+
 export default defineConfig({
   base: basePath,
   plugins: [
+    legacyLegalRedirects(),
     react(),
     tailwindcss(),
     runtimeErrorOverlay(),
@@ -88,17 +122,13 @@ export default defineConfig({
         contact: path.resolve(import.meta.dirname, 'contact/index.html'),
         terminology: path.resolve(import.meta.dirname, 'terminology/index.html'),
         portfolio: path.resolve(import.meta.dirname, 'portfolio/index.html'),
-        websiteForms: path.resolve(
+        privacyPolicy: path.resolve(
           import.meta.dirname,
-          'website-forms/index.html',
+          'privacy-policy/index.html',
         ),
-        websiteFormsPrivacy: path.resolve(
+        termsOfUse: path.resolve(
           import.meta.dirname,
-          'website-forms/privacy/index.html',
-        ),
-        websiteFormsTerms: path.resolve(
-          import.meta.dirname,
-          'website-forms/terms/index.html',
+          'terms-of-use/index.html',
         ),
       },
     },

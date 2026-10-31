@@ -10,6 +10,9 @@
   --focus: #d99024;
   --max-width: 76rem;
   --header-height: 5.5rem;
+  --section-space: clamp(2rem, 3.25vw, 3rem);
+  --heading-space: 1rem;
+  --layout-gap: clamp(1.25rem, 2.5vw, 2.5rem);
   font-family:
     "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-synthesis: none;
@@ -185,7 +188,7 @@ a {
 
 .service-hero {
   display: grid;
-  min-height: min(32rem, calc(80vh - var(--header-height)));
+  min-height: min(28rem, calc(80vh - var(--header-height)));
   place-items: center;
   overflow: hidden;
   background:
@@ -195,7 +198,7 @@ a {
 }
 
 .service-hero__inner {
-  padding-block: clamp(3rem, 6vw, 5rem);
+  padding-block: clamp(2.5rem, 4.5vw, 4rem);
 }
 
 .breadcrumb {
@@ -305,7 +308,36 @@ a {
 }
 
 .content-section {
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: var(--section-space);
+}
+
+/* Keep related headings and copy together without changing type or form UI. */
+.content-section :where(h2, h3) {
+  margin-block: 0 0 0.65rem;
+}
+
+.content-section :where(p:not(.section-kicker, .contact-form *)) {
+  margin-block: 0.75rem;
+}
+
+.content-section :where(
+  .content-shell,
+  .section-heading,
+  .split-layout > div,
+  .editorial-grid > div,
+  article
+) > :where(p:first-child) {
+  margin-top: 0;
+}
+
+.content-section :where(
+  .content-shell,
+  .section-heading,
+  .split-layout > div,
+  .editorial-grid > div,
+  article
+) > :where(p:last-child, ul:last-child) {
+  margin-bottom: 0;
 }
 
 .content-section--light {
@@ -336,7 +368,7 @@ a {
 
 .section-heading {
   max-width: 52rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--heading-space);
 }
 
 .section-heading--center {
@@ -371,7 +403,7 @@ a {
 }
 
 .service-card {
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.25rem, 2vw, 1.5rem);
   border: 1px solid var(--line);
   border-radius: 0.65rem;
   background: var(--surface);
@@ -389,7 +421,7 @@ a {
 .check-list,
 .compact-list {
   display: grid;
-  margin: 1.25rem 0;
+  margin: 0.9rem 0;
   padding: 0;
   gap: 0.7rem;
   list-style: none;
@@ -423,7 +455,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   align-items: start;
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: var(--layout-gap);
 }
 
 .split-layout__lead > p:last-child {
@@ -476,7 +508,7 @@ a {
 .editorial-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: var(--layout-gap);
 }
 
 .compact-list {
@@ -490,7 +522,7 @@ a {
 .process-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
   padding: 0;
   gap: 1px;
   overflow: hidden;
@@ -519,7 +551,7 @@ a {
 }
 
 .closing-cta {
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: var(--section-space);
   background:
     radial-gradient(circle at 85% 10%, rgb(115 185 232 / 24%), transparent 30rem),
     var(--accent-dark);
@@ -955,7 +987,7 @@ a {
 }
 
 .security-layer-callout {
-  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: var(--section-space);
   background:
     radial-gradient(circle at 88% 18%, rgb(115 185 232 / 20%), transparent 24rem),
     var(--accent-dark);
@@ -1040,7 +1072,7 @@ a {
 .about-technical-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(1.5rem, 4vw, 3.5rem);
+  gap: var(--layout-gap);
 }
 
 .about-platform-grid h2,
@@ -1065,7 +1097,7 @@ a {
 
 .about-connection-grid article {
   min-height: auto;
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.25rem;
   background: var(--surface-strong);
 }
 
@@ -1076,9 +1108,18 @@ a {
 }
 
 .about-connection-grid h3 {
-  margin: 1.25rem 0 0;
+  margin: 0.65rem 0 0;
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   line-height: 1.25;
+}
+
+.about-connection-grid h3,
+.service-relationship h3,
+.address-list li,
+.about-service-grid li,
+.ongoing-support-grid li,
+.dns-records li {
+  overflow-wrap: anywhere;
 }
 
 .contact-hero {
@@ -1091,7 +1132,7 @@ a {
 .contact-info-grid,
 .contact-form-layout {
   display: grid;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
+  gap: var(--layout-gap);
 }
 
 .contact-info-grid {
@@ -1298,7 +1339,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
   align-items: center;
-  gap: clamp(2rem, 5vw, 4rem);
+  gap: var(--layout-gap);
 }
 
 .featured-list-panel {
@@ -1346,7 +1387,7 @@ a {
 }
 
 .architecture-comparison article {
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
 }
 
 .architecture-comparison article + article {
@@ -1356,7 +1397,7 @@ a {
 
 .architecture-objective {
   max-width: 66rem;
-  margin: 2rem auto 0;
+  margin: 1.25rem auto 0;
   text-align: center;
   font-weight: 650;
 }
@@ -1511,12 +1552,27 @@ a {
   max-width: 62rem;
 }
 
+.policy-page .service-hero,
+.portfolio-page .service-hero {
+  min-height: 0;
+}
+
+.policy-page .service-hero__inner,
+.portfolio-page .service-hero__inner {
+  padding-block: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.policy-page .service-hero__copy,
+.portfolio-page .service-hero__copy {
+  margin-top: 0.85rem;
+}
+
 .policy-page .content-shell {
   max-width: 54rem;
 }
 
 .policy-page .section-heading {
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--heading-space);
 }
 
 .policy-page .content-section h2 {
@@ -1526,7 +1582,7 @@ a {
 
 .policy-page .content-section p + h2,
 .policy-page .content-section ul + h2 {
-  margin-top: 2.5rem;
+  margin-top: 1.75rem;
 }
 
 .policy-page .content-section ul {
@@ -1611,7 +1667,7 @@ a {
 
   .split-layout,
   .editorial-grid {
-    gap: 3rem;
+    gap: var(--layout-gap);
   }
 
   .process-list {
@@ -1796,18 +1852,23 @@ a {
 }
 
 @media (max-width: 48rem) {
+  :root {
+    --section-space: 1.75rem;
+    --heading-space: 0.9rem;
+    --layout-gap: 1.5rem;
+  }
   .service-hero__inner {
     padding-block: 3rem;
   }
   .content-section {
-    padding-block: 2.5rem;
+    padding-block: var(--section-space);
   }
   .closing-cta,
   .security-layer-callout {
-    padding-block: 2.5rem;
+    padding-block: var(--section-space);
   }
   .section-heading {
-    margin-bottom: 1.75rem;
+    margin-bottom: var(--heading-space);
   }
   .split-layout,
   .editorial-grid,
@@ -1816,20 +1877,25 @@ a {
   .review-workflow,
   .contact-info-grid,
   .contact-form-layout {
-    gap: 2rem;
+    gap: var(--layout-gap);
   }
 }
 
 @media (max-width: 26.875rem) {
+  :root {
+    --section-space: 1.5rem;
+    --heading-space: 0.85rem;
+    --layout-gap: 1.25rem;
+  }
   .service-hero__inner {
     padding-block: 2.5rem;
   }
   .content-section {
-    padding-block: 2rem;
+    padding-block: var(--section-space);
   }
   .closing-cta,
   .security-layer-callout {
-    padding-block: 2rem;
+    padding-block: var(--section-space);
   }
   .split-layout,
   .editorial-grid,
@@ -1838,7 +1904,7 @@ a {
   .review-workflow,
   .contact-info-grid,
   .contact-form-layout {
-    gap: 1.5rem;
+    gap: var(--layout-gap);
   }
   .service-card,
   .featured-list-panel,
@@ -1850,18 +1916,21 @@ a {
 }
 
 @media (max-width: 23.4375rem) {
+  :root {
+    --layout-gap: 1rem;
+  }
   .service-hero__inner {
     padding-block: 2rem;
   }
   .content-section {
-    padding-block: 1.75rem;
+    padding-block: var(--section-space);
   }
   .closing-cta,
   .security-layer-callout {
-    padding-block: 1.75rem;
+    padding-block: var(--section-space);
   }
   .section-heading {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--heading-space);
   }
   .split-layout,
   .editorial-grid,
@@ -1870,7 +1939,7 @@ a {
   .review-workflow,
   .contact-info-grid,
   .contact-form-layout {
-    gap: 1.25rem;
+    gap: var(--layout-gap);
   }
   .service-card,
   .featured-list-panel,
@@ -1885,6 +1954,10 @@ a {
 }
 
 @media (max-width: 20rem) {
+  :root {
+    --section-space: 1.25rem;
+    --heading-space: 0.75rem;
+  }
   .menu-toggle__label {
     position: absolute;
     width: 1px;
@@ -1905,14 +1978,14 @@ a {
     padding-block: 1.75rem;
   }
   .content-section {
-    padding-block: 1.75rem;
+    padding-block: var(--section-space);
   }
   .closing-cta,
   .security-layer-callout {
-    padding-block: 1.75rem;
+    padding-block: var(--section-space);
   }
   .section-heading {
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--heading-space);
   }
   .split-layout,
   .editorial-grid,
@@ -1921,7 +1994,7 @@ a {
   .review-workflow,
   .contact-info-grid,
   .contact-form-layout {
-    gap: 1rem;
+    gap: var(--layout-gap);
   }
 }
 
