@@ -22,7 +22,7 @@
 .portfolio-grid[aria-busy="true"] { min-height: 24rem; }
 .portfolio-grid:empty:not([aria-busy="true"]) { display: none; }
 
-.portfolio-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 0.65rem; background: var(--surface-strong); }
+.portfolio-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid #637085; border-radius: 0.65rem; background: var(--surface-strong); }
 .portfolio-card[hidden] { display: none; }
 .portfolio-card__image { display: block; width: 100%; aspect-ratio: 16 / 10; height: auto; object-fit: contain; background: #eef3f9; border-bottom: 1px solid var(--line); }
 .portfolio-card__body { display: flex; flex: 1 1 auto; flex-direction: column; padding: clamp(1.1rem, 2.2vw, 1.5rem); }
