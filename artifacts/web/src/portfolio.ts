@@ -1,3 +1,5 @@
+import { matchesPortfolioSearch, portfolioIndustryTokens, portfolioSearchTokens } from './portfolio-search.ts';
+
 type PortfolioProject = {
   site_name: string;
   website_url: string;
@@ -14,14 +16,12 @@ type PortfolioProject = {
 };
 
 const search = document.querySelector<HTMLInputElement>('#portfolio-search')!;
-const industry = document.querySelector<HTMLSelectElement>('#portfolio-industry')!;
 const reset = document.querySelector<HTMLButtonElement>('#portfolio-reset')!;
 const controls = document.querySelector<HTMLFieldSetElement>('#portfolio-controls')!;
 const count = document.querySelector<HTMLElement>('#portfolio-count')!;
 const state = document.querySelector<HTMLElement>('#portfolio-state')!;
 const grid = document.querySelector<HTMLElement>('#portfolio-grid')!;
 const empty = document.querySelector<HTMLElement>('#portfolio-empty')!;
-const industryField = document.querySelector<HTMLElement>('#portfolio-industry-field')!;
 
 const text = (value: unknown): string => typeof value === 'string' ? value.trim() : '';
 function safeUrl(value: unknown): string {
@@ -125,23 +125,14 @@ async function loadPortfolio(): Promise<void> {
     const cards = projects.map((project) => ({
       project,
       node: card(project),
-      searchable: [
-        project.site_name, project.short_description, project.industry,
-        project.project_type, ...project.services, project.platform,
-      ].join(' ').toLocaleLowerCase(),
+      searchable: portfolioIndustryTokens(project),
     }));
     grid.replaceChildren(...cards.map(({ node }) => node));
-    const industries = [...new Set(projects.map((project) => project.industry).filter(Boolean))]
-      .sort((a, b) => a.localeCompare(b));
-    if (industries.length > 1) {
-      for (const name of industries) industry.add(new Option(name, name));
-      industryField.hidden = false;
-    }
     function filter(): void {
-      const query = search.value.trim().toLocaleLowerCase();
+      const tokens = portfolioSearchTokens(search.value);
       let visible = 0;
-      for (const { project, node, searchable } of cards) {
-        const matches = searchable.includes(query) && (!industry.value || project.industry === industry.value);
+      for (const { node, searchable } of cards) {
+        const matches = matchesPortfolioSearch(searchable, tokens);
         node.hidden = !matches;
         if (matches) visible++;
       }
@@ -149,10 +140,8 @@ async function loadPortfolio(): Promise<void> {
       empty.hidden = visible !== 0 || projects.length === 0;
     }
     search.addEventListener('input', filter);
-    industry.addEventListener('change', filter);
     reset.addEventListener('click', () => {
       search.value = '';
-      industry.value = '';
       filter();
       search.focus();
     });

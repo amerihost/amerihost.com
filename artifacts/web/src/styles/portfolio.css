@@ -4,8 +4,7 @@
 .portfolio-controls { margin: 0 0 1rem; padding: clamp(1rem, 2.5vw, 1.5rem); border: 1px solid var(--line); border-radius: 0.65rem; background: var(--surface); min-width: 0; }
 .portfolio-controls:disabled { opacity: 0.7; }
 .portfolio-controls__legend { padding: 0 0.4rem; color: var(--ink); font-size: 0.9rem; font-weight: 700; }
-.portfolio-controls__row { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) auto; align-items: end; gap: 1rem; }
-.portfolio-controls__row:not(:has(#portfolio-industry-field:not([hidden]))) { grid-template-columns: minmax(0, 1fr) auto; }
+.portfolio-controls__row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 1rem; }
 .portfolio-field { min-width: 0; }
 .portfolio-field[hidden] { display: none; }
 .portfolio-field__label { display: block; margin-bottom: 0.45rem; color: var(--ink); font-size: 0.9rem; font-weight: 700; }
@@ -40,7 +39,7 @@
 }
 @media (max-width: 44rem) {
   .portfolio-grid { grid-template-columns: 1fr; }
-  .portfolio-controls__row, .portfolio-controls__row:not(:has(#portfolio-industry-field:not([hidden]))) { grid-template-columns: 1fr; }
+  .portfolio-controls__row { grid-template-columns: 1fr; }
   .portfolio-reset { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
